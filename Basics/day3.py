@@ -17,7 +17,6 @@ prompt = ChatPromptTemplate.from_messages(
         ("human", "{question}")
     ]
 )
-
 parser = StrOutputParser()
 chain = prompt | model | parser
 history = [
@@ -26,6 +25,10 @@ history = [
     HumanMessage(content="What is a variable?"),
     AIMessage(content="A variable is used to store data.")
 ]
+response2 = chain.invoke(
+    {"question": "What is python."}
+)
+print(response2)
 formatted_prompt = prompt.invoke(
     {
         "history": history,
