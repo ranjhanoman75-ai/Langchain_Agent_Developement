@@ -23,7 +23,8 @@ for chunk in chain.stream(
     }
 
 ):
-    print(chunk, end="", flush=True)
+    print(type(chunk))
+    print(chunk, end= "", flush=True)
 
 response1 = chain.batch(
     [
