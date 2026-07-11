@@ -17,12 +17,13 @@ message = ChatPromptTemplate.from_messages(
 parser = StrOutputParser()
 chain = message | model | parser
 
-response = chain.invoke(
-    {"question": "Explain loops in Python."}
-)
+for chunk in chain.stream(
+    {
+        "question":"Explain python loops"
+    }
 
-print(response)
-print(type(response))
+):
+    print(chunk, end="", flush=True)
 
 response1 = chain.batch(
     [
