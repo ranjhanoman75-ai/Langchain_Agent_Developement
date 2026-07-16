@@ -1,6 +1,5 @@
 print("================structured output==============")
 from langchain_groq import ChatGroq
-from langchain_core.prompts import ChatPromptTemplate
 from dotenv import load_dotenv
 from pydantic import Field,BaseModel
 
@@ -21,5 +20,3 @@ response = structured_model.invoke(
     "Explain python decorators."
 )
 print(response)
-print(response.topic)
-print(response.description)
