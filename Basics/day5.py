@@ -45,6 +45,6 @@ response = chain.invoke(
 )
 print(response)
 print(type(response))
-print(response.topic)
+print(response.topic)               #its important to write these lines in function for correct output 
 print(response.description)
 print(response.example)
