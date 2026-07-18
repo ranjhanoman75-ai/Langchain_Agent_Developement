@@ -20,3 +20,6 @@ response = structured_model.invoke(
     "Explain python decorators."
 )
 print(response)
+print(response.topic)
+print(response.description)
+print(response.example)
