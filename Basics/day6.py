@@ -9,4 +9,12 @@ print(square_runnable.invoke(10))
 def uppercase(text:str):
     return text.upper()
 uppercase_runnable = RunnableLambda(uppercase)
+response  = uppercase_runnable.batch(
+    [
+        "noman",
+        "mukurram",
+        "bilal"
+    ]
+)
+print(response)
 print(uppercase_runnable.invoke("Python"))
