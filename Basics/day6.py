@@ -13,7 +13,7 @@ remove_spaces_runnable = RunnableLambda(remove_spaces)
 def uppercase(text:str):
     return text.upper()
 uppercase_runnable = RunnableLambda(uppercase)
-chain = remove_spaces_runnable | uppercase_runnable 
+chain = remove_spaces_runnable | uppercase_runnable | model | parser
 response  = chain.invoke(
     "      Explain the python loops      "
 )   
