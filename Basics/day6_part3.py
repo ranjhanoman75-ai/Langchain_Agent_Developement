@@ -34,9 +34,10 @@ parallel_chain= RunnableParallel(
     code = code_chain,
     Interview_question = interview_chain
 )
+topic = input("Enter your topic: ")
 response = parallel_chain.invoke(
     {
-         "topic":"python decorators"
+         "topic":topic
     }
    
 )
